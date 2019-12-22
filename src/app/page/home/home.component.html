@@ -1,0 +1,74 @@
+<div>
+  <WhiteSpace [size]="'xs'"></WhiteSpace>
+  <ng-template [ngTemplateOutlet]="placeHolder"></ng-template>
+
+  <WhiteSpace [size]="'sm'"></WhiteSpace>
+  <ng-template [ngTemplateOutlet]="placeHolder"></ng-template>
+
+  <WhiteSpace></WhiteSpace>
+  <ng-template [ngTemplateOutlet]="placeHolder"></ng-template>
+
+  <WhiteSpace [size]="'lg'"></WhiteSpace>
+  <ng-template [ngTemplateOutlet]="placeHolder"></ng-template>
+
+  <WhiteSpace [size]="'xl'"></WhiteSpace>
+  <ng-template [ngTemplateOutlet]="placeHolder"></ng-template>
+
+  <ng-template #placeHolder>
+    <div class="placeholder">Block</div>
+  </ng-template>
+</div>
+<Navbar [leftContent]="'Back'" [mode]="'light'" [rightContent]="popover" (onLeftClick)="onLeftClick()">
+  NavBar
+</Navbar>
+
+<ng-template #popover>
+  <Icon
+    Popover
+    [ngStyle]="{ height: '100%', display: 'flex', 'align-items': 'center' }"
+    [mask]="true"
+    [showArrow]="true"
+    [overlay]="overlay"
+    [type]="'ellipsis'"
+    [placement]="'bottomRight'"
+    (onSelect)="onSelect($event)"
+    (onVisibleChange)="onVisibleChange($event)"
+  ></Icon>
+</ng-template>
+
+<ng-template #overlay>
+  <PopoverItem [icon]="icon1">Scan</PopoverItem>
+  <PopoverItem [icon]="icon2" [ngStyle]="{ whiteSpace: 'nowrap' }">My Qrcode</PopoverItem>
+  <PopoverItem [icon]="icon3">
+    <span [ngStyle]="{ marginRight: 5 }">Help</span>
+  </PopoverItem>
+</ng-template>
+
+<ng-template #icon1>
+  <Icon [src]="'https://gw.alipayobjects.com/zos/rmsportal/tOtXhkIWzwotgGSeptou.svg'" [size]="'xs'"></Icon>
+</ng-template>
+
+<ng-template #icon2>
+  <Icon [src]="'https://gw.alipayobjects.com/zos/rmsportal/PKAgAqZWJVNwKsAJSmXd.svg'" [size]="'xs'"></Icon>
+</ng-template>
+
+<ng-template #icon3>
+  <Icon [src]="'https://gw.alipayobjects.com/zos/rmsportal/uQIYTFeRrjPELImDRrPt.svg'" [size]="'xs'"></Icon>
+</ng-template>
+
+<WingBlank [size]="'lg'" class="sc-example">
+  <p class="sub-title">Simplest</p>
+  <SegmentedControl [values]="['Segment1', 'Segment2']"></SegmentedControl>
+  <p class="sub-title">Disabled</p>
+  <SegmentedControl [values]="['Segment1', 'Segment2']" [disabled]="true"></SegmentedControl>
+  <p class="sub-title">SelectedIndex</p>
+  <SegmentedControl [selectedIndex]="1" [values]="['Segment1', 'Segment2', 'Segment3']"></SegmentedControl>
+  <p class="sub-title">TintColor</p>
+  <SegmentedControl
+    style="height: 40px; width: 250px"
+    [tintColor]="'#ff0000'"
+    [values]="['Segment1', 'Segment2', 'Segment3']"
+  ></SegmentedControl>
+  <p class="sub-title">onChange</p>
+  <SegmentedControl [values]="['Segment1', 'Segment2', 'Segment3']" (onChange)="choose($event)"></SegmentedControl>
+</WingBlank>

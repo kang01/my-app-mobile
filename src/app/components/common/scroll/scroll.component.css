@@ -1,0 +1,7 @@
+.wrapper {
+  height: calc(100vh - 45px);
+  overflow: auto;
+}
+.content {
+  /* height: calc(100% - 50px); */
+}

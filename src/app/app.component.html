@@ -1,0 +1,37 @@
+<!-- <app-home></app-home> -->
+<!-- <Navbar
+  [icon]="icon"
+  [rightContent]="rightContent"
+  [mode]="'light'"
+  (onLeftClick)="onLeftClick()"
+>
+  NavBar
+</Navbar> -->
+<Navbar
+  [leftContent]="'Back'"
+  (onLeftClick)="onLeftClick()"
+>
+  NavBar
+</Navbar>
+
+<ng-template #icon>
+  <Icon [type]="'left'"></Icon>
+</ng-template>
+
+<!-- <ng-template #rightContent>
+  <Icon [type]="'search'" [ngStyle]="{ marginRight: '16px' }"></Icon>
+  <Icon [type]="'ellipsis'"></Icon>
+</ng-template>
+<app-tab-bar></app-tab-bar>
+<app-tabs></app-tabs>
+<app-button></app-button>
+<app-date-picker></app-date-picker>
+<app-toast></app-toast>
+<app-image></app-image> -->
+<!-- <app-input></app-input> -->
+<!-- <app-pull-to-refresh></app-pull-to-refresh> -->
+
+<!-- <app-scroll>
+ 
+</app-scroll> -->
+<app-date-picker></app-date-picker>
